@@ -58,3 +58,6 @@ replace.sh
 # extras is a submodule, don't include
 extras/
 *.lnk
+*.sa1
+vba1.ini
+*.lnk
