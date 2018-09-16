@@ -91,13 +91,13 @@ ld hl,OakSpeechText2
     call PrintText
     call GBFadeOutToWhite
     call ClearScreen
-	callba SendPlayerPal
+	callba SendPlayerAPal
     ld de,RedPicFront
     lb bc, Bank(RedPicFront), $00
     ld a, [wPlayerGender] ; check gender
     and a      ; check gender
     jr z, .NotLeaf1
-	callba SendPlayerPal
+	callba SendPlayerBPal
     ld de,LeafPicFront
     lb bc, Bank(LeafPicFront), $00
 .NotLeaf1:
@@ -108,7 +108,7 @@ ld hl,OakSpeechText2
 	call ChoosePlayerName
 	call GBFadeOutToWhite
 	call ClearScreen
-	callba SendRivalPal
+	callba SendRivalAPal
 	ld de,RivalAPic
 	lb bc, Bank(RivalAPic), $00
 	call IntroDisplayPicCenteredOrUpperRight
@@ -117,7 +117,7 @@ ld hl,OakSpeechText2
 	call PrintText
 	call GBFadeOutToWhite
 	call ClearScreen
-	callba SendRivalPal
+	callba SendRivalBPal
 	ld de,RivalBPic
 	lb bc, Bank(RivalBPic), $00
 	call IntroDisplayPicCenteredOrUpperRight
@@ -128,13 +128,13 @@ ld hl,OakSpeechText2
 .skipChoosingNames
     call GBFadeOutToWhite
     call ClearScreen
-	callba SendPlayerPal
+	callba SendPlayerAPal
     ld de,RedPicFront
     lb bc, Bank(RedPicFront), $00
     ld a, [wPlayerGender] ; check gender
     and a      ; check gender
     jr z, .NotLeaf2
-	callba SendPlayerPal
+	callba SendPlayerBPal
     ld de,LeafPicFront
     lb bc, Bank(LeafPicFront), $00
 .NotLeaf2:

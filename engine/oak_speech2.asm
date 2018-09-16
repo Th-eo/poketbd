@@ -33,13 +33,14 @@ ChoosePlayerName:
     cp "@"
     jr z, .customName
     call ClearScreen
-	callba SendPlayerPal
+	callba SendPlayerAPal
     call Delay3
     ld de, RedPicFront
     ld b, BANK(RedPicFront)
     ld a, [wPlayerGender] ; Added gender check
     and a      ; Added gender check
     jr z, .AreBoy3
+	callba SendPlayerBPal
     ld de, LeafPicFront
     ld b, BANK(LeafPicFront)
 .AreBoy3
@@ -73,7 +74,7 @@ ChooseRivalName:
 	cp "@"
 	jr z, .customName
 	call ClearScreen
-	callba SendRivalPal
+	callba SendRivalAPal
 	call Delay3
 	ld de, RivalAPic
 	ld b, $13

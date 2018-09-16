@@ -256,3 +256,6 @@ const_value = 0
 	const PAL_AGATHA        ; $EC
 	const PAL_LANCE         ; $ED
 	const PAL_HERO          ; $EE
+	const PAL_HEROINE       ; 
+	const PAL_RIVALA        ; 
+	const PAL_RIVALB        ; 

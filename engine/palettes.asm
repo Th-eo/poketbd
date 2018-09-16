@@ -1172,12 +1172,20 @@ SendPikaPal:
 	ld a, PAL_PIKACHU
 	jr SendCustomPacket
 
-SendPlayerPal:
+SendPlayerAPal:
 	ld a, PAL_HERO
 	jr SendCustomPacket
+	
+SendPlayerBPal:
+	ld a, PAL_HEROINE
+	jr SendCustomPacket
 
-SendRivalPal:
-	ld a, PAL_GARY1
+SendRivalAPal:
+	ld a, PAL_RIVALA
+	jr SendCustomPacket
+	
+SendRivalBPal:
+	ld a, PAL_RIVALB
 	jr SendCustomPacket
 
 SendCustomPacket:
