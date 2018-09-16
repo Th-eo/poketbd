@@ -6,10 +6,10 @@
 	sudo make -C rgbds install
 
 	git clone https://github.com/pret/pokeyellow
-	cd pokeyellow
+	cd pokecerise
 	git submodule update --init
 
-To build **pokeyellow.gbc**:
+To build **pokecerise.gbc**:
 
 	make
 
@@ -24,7 +24,7 @@ In **Terminal**, run:
 	sudo make -C rgbds install
 
 	git clone https://github.com/pret/pokeyellow
-	cd pokeyellow
+	cd pokecerise
 	git submodule update --init
 
 Then run (in the shell):
@@ -44,7 +44,7 @@ Extract the archive and put `rgbasm.exe`, `rgblink.exe` and `rgbfix.exe` in `C:\
 In the **Cygwin terminal**:
 
 	git clone https://github.com/pret/pokeyellow
-	cd pokeyellow
+	cd pokecerise
 	git submodule update --init
 
 Then run (in the Cygwin terminal):
