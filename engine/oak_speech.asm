@@ -70,6 +70,7 @@ OakSpeech:
     ld a, [wCurrentMenuItem]
     ld [wPlayerGender], a ; store player's gender. 00 for boy, 01 for girl
     call ClearScreen ; clear the screen before resuming normal intro
+	callba SendOakPal
 	ld de,ProfOakPic
 	lb bc, Bank(ProfOakPic), $00
 	call IntroDisplayPicCenteredOrUpperRight
@@ -78,6 +79,7 @@ OakSpeech:
 	call PrintText
 	call GBFadeOutToWhite
 	call ClearScreen
+	callba SendPikaPal
 	ld a,PIKACHU
 	ld [wd0b5],a
 	ld [wcf91],a
@@ -89,11 +91,13 @@ ld hl,OakSpeechText2
     call PrintText
     call GBFadeOutToWhite
     call ClearScreen
+	callba SendPlayerPal
     ld de,RedPicFront
     lb bc, Bank(RedPicFront), $00
     ld a, [wPlayerGender] ; check gender
     and a      ; check gender
     jr z, .NotLeaf1
+	callba SendPlayerPal
     ld de,LeafPicFront
     lb bc, Bank(LeafPicFront), $00
 .NotLeaf1:
@@ -104,6 +108,7 @@ ld hl,OakSpeechText2
 	call ChoosePlayerName
 	call GBFadeOutToWhite
 	call ClearScreen
+	callba SendRivalPal
 	ld de,RivalAPic
 	lb bc, Bank(RivalAPic), $00
 	call IntroDisplayPicCenteredOrUpperRight
@@ -112,6 +117,7 @@ ld hl,OakSpeechText2
 	call PrintText
 	call GBFadeOutToWhite
 	call ClearScreen
+	callba SendRivalPal
 	ld de,RivalBPic
 	lb bc, Bank(RivalBPic), $00
 	call IntroDisplayPicCenteredOrUpperRight
@@ -122,11 +128,13 @@ ld hl,OakSpeechText2
 .skipChoosingNames
     call GBFadeOutToWhite
     call ClearScreen
+	callba SendPlayerPal
     ld de,RedPicFront
     lb bc, Bank(RedPicFront), $00
     ld a, [wPlayerGender] ; check gender
     and a      ; check gender
     jr z, .NotLeaf2
+	callba SendPlayerPal
     ld de,LeafPicFront
     lb bc, Bank(LeafPicFront), $00
 .NotLeaf2:

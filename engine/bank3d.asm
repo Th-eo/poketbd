@@ -184,6 +184,7 @@ LeafFishingTilesFront: INCBIN "gfx/leaf_fishing_tile_front.2bpp"
 LeafFishingTilesBack:  INCBIN "gfx/leaf_fishing_tile_back.2bpp"
 LeafFishingTilesSide:  INCBIN "gfx/leaf_fishing_tile_side.2bpp"
 
+
 LoadYellowTitleScreenGFX:
 	ld hl, PokemonLogoGraphics
 	ld de, vChars2

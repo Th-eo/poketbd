@@ -225,10 +225,12 @@ HoFLoadPlayerPics:
     ld a, BANK(LeafPicBack)
 .routine2 ; original routine
     call UncompressSpriteFromDE
-	predef ScaleSpriteByTwo
+	xor a
+	ld [wTrainerClass], a
+	ld a, $66
 	ld de, vBackPic
-	call InterlaceMergeSpriteBuffers
-	ld c, $1
+	push de
+	jp LoadUncompressedBackSprite
 
 HoFLoadMonPlayerPicTileIDs:
 ; c = base tile ID
