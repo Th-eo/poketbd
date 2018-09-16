@@ -1766,11 +1766,13 @@ RunMapScript::
 	ret
 
 LoadWalkingPlayerSpriteGraphics::
-    ld de,RedSprite
+    ld b, BANK(RedSprite)
+	ld de, RedSprite
     ld a, [wPlayerGender]
     and a
     jr z, .AreGuy1
-    ld de,LeafSprite
+    ld b, BANK(LeafSprite)
+	ld de,LeafSprite
 .AreGuy1
     ld hl,vNPCSprites
     jr LoadPlayerSpriteGraphicsCommon
@@ -1793,9 +1795,9 @@ LoadSurfingPlayerSpriteGraphics2::
 	jr LoadPlayerSpriteGraphicsCommon
 	
 LoadSurfingPlayerSpriteGraphics::
-    ld de,SeelSprite
-    ld hl,vNPCSprites
-    jr LoadPlayerSpriteGraphicsCommon
+	ld b, BANK(SeelSprite)
+	ld de, SeelSprite
+	jr LoadPlayerSpriteGraphicsCommon
 
 LoadBikePlayerSpriteGraphics::
     ld de,RedCyclingSprite
@@ -1809,23 +1811,20 @@ LoadBikePlayerSpriteGraphics::
 
 
 LoadPlayerSpriteGraphicsCommon::
-	ld hl, vNPCSprites
 	push de
 	push hl
-	push bc
-	ld c, $c
+	lb bc, BANK(RedSprite), $0c
 	call CopyVideoData
-	pop bc
 	pop hl
 	pop de
-	ld a, $c0
+	ld a,$c0
 	add e
-	ld e, a
-	jr nc, .noCarry
+	ld e,a
+	jr nc,.noCarry
 	inc d
 .noCarry
-	set 3, h
-	ld c, $c
+	set 3,h
+	lb bc, BANK(RedSprite), $0c
 	jp CopyVideoData
 
 ; function to load data from the map header
