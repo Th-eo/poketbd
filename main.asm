@@ -127,7 +127,7 @@ INCLUDE "engine/menu/status_screen.asm"
 INCLUDE "engine/menu/party_menu.asm"
 
 RedPicFront: INCBIN "pic/ytrainer/red.pic"
-LeafPicFront:: INCBIN "pic/trainer/leaf.pic"
+LeafPicFront:: INCBIN "pic/ytrainer/leaf.pic"
 ShrinkPic1:  INCBIN "pic/trainer/shrink1.pic"
 ShrinkPic2:  INCBIN "pic/trainer/shrink2.pic"
 

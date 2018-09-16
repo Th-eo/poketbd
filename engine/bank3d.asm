@@ -172,14 +172,14 @@ PikachuMoods:
 	db $6c           ; Unknown (d = 10)
 	db $00           ; Unknown (d = 11)
 
-RedPicBack:       INCBIN "pic/trainer/redb.pic"
+RedPicBack:       INCBIN "pic/ytrainer/redb.pic"
 OldManPic:	      INCBIN "pic/trainer/oldman.pic"
 ProfOakPicBack:   INCBIN "pic/ytrainer/prof.oakb.pic"
 ; Custom Rivals
 RivalAPic:        INCBIN "pic/ytrainer/rivala.pic"
 RivalBPic:        INCBIN "pic/ytrainer/rivalb.pic"
 ; Female Player Character
-LeafPicBack::  INCBIN "pic/trainer/leafb.pic"
+LeafPicBack::  INCBIN "pic/ytrainer/leafb.pic"
 LeafFishingTilesFront: INCBIN "gfx/leaf_fishing_tile_front.2bpp"
 LeafFishingTilesBack:  INCBIN "gfx/leaf_fishing_tile_back.2bpp"
 LeafFishingTilesSide:  INCBIN "gfx/leaf_fishing_tile_side.2bpp"
