@@ -92,13 +92,21 @@ OakSpeech:
 	call ChoosePlayerName
 	call GBFadeOutToWhite
 	call ClearScreen
-	ld de,Rival1Pic
-	lb bc, Bank(Rival1Pic), $00
+	ld de,RivalAPic
+	lb bc, Bank(RivalAPic), $00
 	call IntroDisplayPicCenteredOrUpperRight
 	call FadeInIntroPic
-	ld hl,IntroduceRivalText
+	ld hl,IntroduceRivalAText
 	call PrintText
-	call ChooseRivalName
+	call GBFadeOutToWhite
+	call ClearScreen
+	ld de,RivalBPic
+	lb bc, Bank(RivalBPic), $00
+	call IntroDisplayPicCenteredOrUpperRight
+	call FadeInIntroPic
+	ld hl,IntroduceRivalBText
+	call PrintText
+	;call ChooseRivalName
 .skipChoosingNames
 	call GBFadeOutToWhite
 	call ClearScreen
@@ -169,8 +177,11 @@ OakSpeechText2:
 IntroducePlayerText:
 	TX_FAR _IntroducePlayerText
 	db "@"
-IntroduceRivalText:
-	TX_FAR _IntroduceRivalText
+IntroduceRivalAText:
+	TX_FAR _IntroduceRivalAText
+	db "@"
+IntroduceRivalBText:
+	TX_FAR _IntroduceRivalBText
 	db "@"
 OakSpeechText3:
 	TX_FAR _OakSpeechText3
