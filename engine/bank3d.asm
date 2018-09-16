@@ -175,7 +175,6 @@ PikachuMoods:
 RedPicBack:       INCBIN "pic/trainer/redb.pic"
 OldManPic:	      INCBIN "pic/trainer/oldman.pic"
 ProfOakPicBack:   INCBIN "pic/ytrainer/prof.oakb.pic"
-Rival1Pic:        INCBIN "pic/ytrainer/rival1.pic"
 ; Custom Rivals
 RivalAPic:        INCBIN "pic/ytrainer/rivala.pic"
 RivalBPic:        INCBIN "pic/ytrainer/rivalb.pic"
