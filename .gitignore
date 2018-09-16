@@ -61,3 +61,4 @@ extras/
 *.sa1
 vba1.ini
 *.lnk
+install.bat
