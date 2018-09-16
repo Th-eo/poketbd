@@ -14,7 +14,7 @@ ShowPokedexMenu:
 .setUpGraphics
 	callab LoadPokedexTilePatterns
 .loop
-	callba SendPokeballPal
+	callba SendPokedexPal ; Palette for the UI
 .doPokemonListMenu
 	ld hl, wTopMenuItemY
 	ld a, 3
