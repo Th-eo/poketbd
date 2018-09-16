@@ -6,3 +6,6 @@
 - Exp bars
 - GBC palettes
 - Unzoomed backsprites
+
+###### Upcoming features
+*None yet*
