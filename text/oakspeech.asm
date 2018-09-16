@@ -45,8 +45,6 @@ _IntroduceRivalBText::
 	text "And her, she's"
 	line "a friend of"
 	cont "yours too!"
-	;para "Aren't you po-"
-	;line "pular?""
 
 	para "Whatever place-"
 	line "holder text."
@@ -64,3 +62,8 @@ _OakSpeechText3::
 	cont "with #MON"
 	cont "awaits! Let's go!"
 	done
+
+_BoyGirlText::
+    text "What will you"
+    line "play as?"
+    done

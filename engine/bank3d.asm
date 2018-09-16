@@ -175,9 +175,15 @@ PikachuMoods:
 RedPicBack:       INCBIN "pic/trainer/redb.pic"
 OldManPic:	      INCBIN "pic/trainer/oldman.pic"
 ProfOakPicBack:   INCBIN "pic/ytrainer/prof.oakb.pic"
-Rival1Pic:        ;INCBIN "pic/ytrainer/rivala.pic"
+Rival1Pic:        INCBIN "pic/ytrainer/rivala.pic"
+; Custom Rivals
 RivalAPic:        INCBIN "pic/ytrainer/rivala.pic"
 RivalBPic:        INCBIN "pic/ytrainer/rivalb.pic"
+; Female Player Character
+LeafPicBack::  INCBIN "pic/trainer/leafb.pic"
+LeafFishingTilesFront: INCBIN "gfx/leaf_fishing_tile_front.2bpp"
+LeafFishingTilesBack:  INCBIN "gfx/leaf_fishing_tile_back.2bpp"
+LeafFishingTilesSide:  INCBIN "gfx/leaf_fishing_tile_side.2bpp"
 
 LoadYellowTitleScreenGFX:
 	ld hl, PokemonLogoGraphics

@@ -1,31 +1,51 @@
 ChoosePlayerName:
-	call OakSpeechSlidePicRight
-	ld de, DefaultNamesPlayer
-	call DisplayIntroNameTextBox
-	ld a, [wCurrentMenuItem]
-	and a
-	jr z, .customName
-	ld hl, DefaultNamesPlayerList
-	call GetDefaultName
-	ld de, wPlayerName
-	call OakSpeechSlidePicLeft
-	jr .done
+    call OakSpeechSlidePicRight
+    ld a, [wPlayerGender] ; Added gender check
+    and a
+    jr nz, .AreGirl ; Skip to girl names if you are a girl instead
+    ld de, DefaultNamesPlayer
+    call DisplayIntroNameTextBox
+    ld a, [wCurrentMenuItem]
+    and a
+    jr z, .customName
+    ld hl, DefaultNamesPlayerList
+    call GetDefaultName
+    ld de, wPlayerName
+    call OakSpeechSlidePicLeft
+    jr .done
+.AreGirl ; Copy of the boy naming routine, just with girl's names
+    ld de, DefaultNamesGirl
+    call DisplayIntroNameTextBox
+    ld a, [wCurrentMenuItem]
+    and a
+    jr z, .customName
+    ld hl, DefaultNamesGirlList
+    call GetDefaultName
+    ld de, wPlayerName
+    call OakSpeechSlidePicLeft
+    jr .done ; End of new Girl Names routine
 .customName
-	ld hl, wPlayerName
-	xor a ; NAME_PLAYER_SCREEN
-	ld [wNamingScreenType], a
-	call DisplayNamingScreen
-	ld a, [wcf4b]
-	cp "@"
-	jr z, .customName
-	call ClearScreen
-	call Delay3
-	ld de, RedPicFront
-	ld b, BANK(RedPicFront)
-	call IntroDisplayPicCenteredOrUpperRight
+    ld hl, wPlayerName
+    xor a ; NAME_PLAYER_SCREEN
+    ld [wNamingScreenType], a
+    call DisplayNamingScreen
+    ld a, [wcf4b]
+    cp "@"
+    jr z, .customName
+    call ClearScreen
+    call Delay3
+    ld de, RedPicFront
+    ld b, BANK(RedPicFront)
+    ld a, [wPlayerGender] ; Added gender check
+    and a      ; Added gender check
+    jr z, .AreBoy3
+    ld de, LeafPicFront
+    ld b, BANK(LeafPicFront)
+.AreBoy3
+    call IntroDisplayPicCenteredOrUpperRight
 .done
-	ld hl, YourNameIsText
-	jp PrintText
+    ld hl, YourNameIsText
+    jp PrintText
 
 YourNameIsText:
 	TX_FAR _YourNameIsText
@@ -193,6 +213,13 @@ DefaultNamesPlayer:
 	next "ASH"
 	next "JACK"
 	db   "@"
+	
+DefaultNamesGirl:
+    db   "NEW NAME"
+    next "SCARLET"
+    next "LEAF"
+    next "NICOLE"
+    db   "@"
 
 DefaultNamesRival:
 	db   "NEW NAME"
@@ -230,6 +257,12 @@ DefaultNamesPlayerList:
 	db "YELLOW@"
 	db "ASH@"
 	db "JACK@"
+	
+DefaultNamesGirlList:
+    db "NEW NAME@"
+    db "SCARLET@"
+    db "LEAF@"
+    db "NICOLE@"
 
 DefaultNamesRivalList:
 	db "NEW NAME@"

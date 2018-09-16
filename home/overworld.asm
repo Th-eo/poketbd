@@ -1766,12 +1766,14 @@ RunMapScript::
 	ret
 
 LoadWalkingPlayerSpriteGraphics::
-; new sprite copy stuff
-	xor a
-	ld [wd473], a
-	ld b, BANK(RedSprite)
-	ld de, RedSprite
-	jr LoadPlayerSpriteGraphicsCommon
+    ld de,RedSprite
+    ld a, [wPlayerGender]
+    and a
+    jr z, .AreGuy1
+    ld de,LeafSprite
+.AreGuy1
+    ld hl,vNPCSprites
+    jr LoadPlayerSpriteGraphicsCommon
 
 LoadSurfingPlayerSpriteGraphics2::
 	ld a, [wd473]
@@ -1789,15 +1791,23 @@ LoadSurfingPlayerSpriteGraphics2::
 	ld b, BANK(SurfingPikachuSprite)
 	ld de, SurfingPikachuSprite
 	jr LoadPlayerSpriteGraphicsCommon
-
+	
 LoadSurfingPlayerSpriteGraphics::
-	ld b, BANK(SeelSprite)
-	ld de, SeelSprite
-	jr LoadPlayerSpriteGraphicsCommon
+    ld de,SeelSprite
+    ld hl,vNPCSprites
+    jr LoadPlayerSpriteGraphicsCommon
 
 LoadBikePlayerSpriteGraphics::
-	ld b, BANK(RedCyclingSprite)
-	ld de, RedCyclingSprite
+    ld de,RedCyclingSprite
+    ld a, [wPlayerGender]
+    and a
+    jr z, .AreGuy2
+    ld de,LeafCyclingSprite
+.AreGuy2
+    ld hl,vNPCSprites
+
+
+
 LoadPlayerSpriteGraphicsCommon::
 	ld hl, vNPCSprites
 	push de
