@@ -3,6 +3,7 @@
 
 This is a disassembly of Pokémon Cerise :cherries:, using the Pokémon Yellow disassembly as a base.
 
-To set up the repository, see [**INSTALL.md**](INSTALL.md).
+See [**FEATURES.md**](FEATURES.md) and [**CREDITS.md**](CREDITS.md).
+To install, follow [**INSTALL.md**](INSTALL.md).
 
 ![Pokémon Cerise](https://i.imgur.com/ocMRBJQ.png)
