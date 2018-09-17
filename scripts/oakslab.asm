@@ -469,6 +469,7 @@ OaksLabScript16:
 
 OaksLabScript17:
 ; Pikachu comes out
+
 	ld a, SPRITE_FACING_UP
 	ld [wPlayerFacingDirection], a
 	ld a, $2
@@ -1024,7 +1025,7 @@ OaksLabText_1cb3a:
 
 OaksLabText18:
 	TX_ASM
-	ld a, PIKACHU
+	ld a, CLEFAIRY;PIKACHU
 	ld [wPlayerStarter], a
 	ld [wd11e], a
 	call GetMonName
@@ -1038,7 +1039,7 @@ OaksLabText18:
 	ld [wMonDataLocation], a
 	ld a, 5
 	ld [wCurEnemyLVL], a
-	ld a, PIKACHU
+	ld a, CLEFAIRY;PIKACHU
 	ld [wd11e], a
 	ld [wcf91], a
 	call AddPartyMon
