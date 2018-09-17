@@ -51,11 +51,28 @@ OakSpeech:
 	call SetDefaultNames
 	predef InitPlayerData2
 	ld hl,wNumBoxItems
+	; Give items
 	ld a,BICYCLE
 	ld [wcf91],a
 	ld a,1
 	ld [wItemQuantity],a
-	call AddItemToInventory  ; give one potion
+	call AddItemToInventory  ; give one Bicycle
+	ld a,OLD_ROD
+	ld [wcf91],a
+	ld a,1
+	ld [wItemQuantity],a
+	call AddItemToInventory  ; give one OldRod
+	ld a,GOOD_ROD
+	ld [wcf91],a
+	ld a,1
+	ld [wItemQuantity],a
+	call AddItemToInventory  ; give one GoodRod
+	ld a,SUPER_ROD
+	ld [wcf91],a
+	ld a,1
+	ld [wItemQuantity],a
+	call AddItemToInventory  ; give one SuperRod
+	; End Give items
 	ld a,[wDefaultMap]
 	ld [wDestinationMap],a
 	call SpecialWarpIn
