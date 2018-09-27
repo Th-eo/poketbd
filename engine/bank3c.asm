@@ -222,7 +222,7 @@ INCLUDE "scripts/mtmoonpokecenter2.asm"
 INCLUDE "data/mapHeaders/beach_house.asm"
 INCLUDE "scripts/beach_house.asm"
 BeachHouseBlockdata:
-INCBIN "maps/beachhouse.blk"
+INCBIN "maps/BeachHouse.blk"
 INCLUDE "data/mapObjects/beach_house.asm"
 
 INCLUDE "scripts/beach_house2.asm"
